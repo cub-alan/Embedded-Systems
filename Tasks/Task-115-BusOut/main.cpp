@@ -12,18 +12,18 @@ BusOut lights(PC_2, PC_3, PC_6);
 int main()
 {
     //All OFF
-    lights = 0b000;
+    lights = 0b111;
 
     while (true)
     {
-        int count = 0;
+        int count = 7;
         while (count <= 7) 
         {
             printf("count = %d\n", count);
             lights = count;
             wait_us(1000000);
 
-            count = count + 1;
+            count = count - 1;
         }
     }
 }
