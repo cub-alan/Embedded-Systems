@@ -17,6 +17,8 @@ int main()
 {
     int count = 0;
 
+    greenLED = 0;
+
     //Turn ON the 7-segment display
     disp.enable(true);
 
@@ -34,18 +36,26 @@ int main()
             count = 50;
             disp = count;
         }
-        if (btnB == 1){
-            redLED = !redLED;
-            count = count - 1;
-            disp = count;
-        }
         //Test Button A
-        if (btnA == 1) {
+        else if (btnA == 1) {
             redLED = !redLED;    //Toggle RED led
             count = count + 1;            //Increment count
             disp = count;       //Update display
+            if (count>=99){
+                break;
+            }
         }
-
+        else if (btnB == 1){
+            redLED = !redLED;
+            count = count - 1;
+            disp = count;
+            if(count<=0){
+                break;
+            }
+        }
+        else {
+            greenLED = 1;
+        }
         // Slow it down a bit (and debounce the switches)
         wait_us(100000);  
     }
