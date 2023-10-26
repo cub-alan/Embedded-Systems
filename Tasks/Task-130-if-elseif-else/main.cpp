@@ -27,7 +27,18 @@ int main()
         
         //Read button without blocking
         int btnA = ButtonA;     //Local to the while-loop  
+        int btnB = ButtonB;
+        int btnC = ButtonC;
 
+        if (btnC ==1){
+            count = 69;
+            disp = count;
+        }
+        if (btnB == 1){
+            redLED = !redLED;
+            count = count - 1;
+            disp = count;
+        }
         //Test Button A
         if (btnA == 1) {
             redLED = !redLED;    //Toggle RED led
