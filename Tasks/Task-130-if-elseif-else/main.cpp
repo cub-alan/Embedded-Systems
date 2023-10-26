@@ -31,7 +31,7 @@ int main()
         int btnC = ButtonC;
 
         if (btnC ==1){
-            count = 69;
+            count = 50;
             disp = count;
         }
         if (btnB == 1){
